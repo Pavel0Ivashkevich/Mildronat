@@ -187,8 +187,8 @@ header {
 }
 
 .section-with-media .video-gif {
-    width: 500px;
-    height: 500px;
+    width: 450px;
+    height: 450px;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
@@ -1320,7 +1320,7 @@ ul li img {
     cursor: pointer;
     margin-left: 10%;
     opacity: 0; 
-    animation: fadeInButton 1s ease-out forwards; 
+    animation: fadeInButton 3s ease-out forwards; 
 }
 
 .button-icon {
@@ -1414,6 +1414,9 @@ ul li img {
 }
 /* адаптив */
 @media (max-width: 1920px) {
+    sup { 
+        font-size: 15px;
+    }
     .section-with-media {
         
         padding: 44px 15%;

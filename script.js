@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
         referencesList.classList.toggle('visible');
     }
 
-    
+    // Добавляем обработчик события клика для кнопки "Источники"
     document.querySelector('.references-button').addEventListener('click', toggleReferences);
 
     // Функция для проверки видимости элемента
-    function isScrolledIntoView(el, percentVisible = 80) {
+    function isScrolledIntoView(el, percentVisible = 0) {
         const rect = el.getBoundingClientRect();
         const windowHeight = window.innerHeight || document.documentElement.clientHeight;
         const elementTop = rect.top;
@@ -131,6 +131,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const imageTextSection = document.querySelector('.image-text-section');
         const influenceSection = document.querySelector('.influence-section');
         const improvementSection = document.querySelector('.improvement');
+        const anniversarySection = document.querySelector('.anniversary-section');
+        const referencesButton = document.querySelector('.references-button');
 
         const observerOptions = {
             threshold: 0.6
@@ -140,6 +142,9 @@ document.addEventListener('DOMContentLoaded', () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate');
+                    if (entry.target === anniversarySection) {
+                        referencesButton.classList.add('animate');
+                    }
                 }
             });
         }, observerOptions);
@@ -151,8 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (imageTextSection) observer.observe(imageTextSection);
         if (influenceSection) observer.observe(influenceSection);
         if (improvementSection) observer.observe(improvementSection);
+        if (anniversarySection) observer.observe(anniversarySection);
     }
-
 
     function init() {
         handleScrollCharts();
@@ -169,28 +174,24 @@ document.addEventListener('DOMContentLoaded', () => {
         handleScrollAnniversarySection();
     });
 
-   
     init();
 });
+
 document.addEventListener('DOMContentLoaded', () => {
     const footer = document.querySelector('.footer');
 
-  
     const observerCallback = (entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('animate');
-               
                 observer.unobserve(entry.target);
             }
         });
     };
 
-
     const observer = new IntersectionObserver(observerCallback, {
         threshold: 0.2 
     });
 
-  
     observer.observe(footer);
 });
