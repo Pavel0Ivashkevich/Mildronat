@@ -1439,6 +1439,9 @@ ul li img {
 }
 }
 @media (max-width: 1400px) {
+    sup {
+        font-size: 10px;
+    }
     .info-box { 
         margin-left: 6% ;
     }
@@ -1496,17 +1499,27 @@ ul li img {
     }
 
     .info-box {
-        top: auto; 
+  
         left: 50%; 
-        transform: translateX(-50%); 
-        margin-top: 10px; 
-        position: relative; 
-        margin-left: 30%;
+       
+        
     }
-
+    .section-with-media {
+        padding: 44px 10%;
+    }
+    .section-with-media img {
+        width: 60%; 
+    }
+    .section-with-media .video-gif {
+        width: 250px;
+        height: 250px;
+    }
     .pazzle {
         width: 100%;
-        top: 150px;
+        height: 60%;
+    }
+    .footer-top {
+        font-size: 3.7vh;
     }
     .centered-section {
         background-color: rgba(182, 32, 23, 0.1);
@@ -1652,10 +1665,7 @@ ul li img {
     .pazzle {
         top: 35%;
     }
-    .section-with-media .video-gif {
-        width: 300px;
-        height: 300px;
-    }
+    
     .grid-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -1718,10 +1728,13 @@ ul li img {
 @media (max-width: 500px) {
     .info-box {
         top: auto;
-        left: 10%;
+        width: auto;
+    }
+    .intro h1 {
+        font-size: 1.5rem;
     }
     .intro p {
-        font-size: 1.125rem;
+        font-size: 1rem;
         max-width: 50%;
     }
     .consequences h2 {
@@ -1729,6 +1742,9 @@ ul li img {
         font-family: MyriadProBold;
         font-size: 1rem;
         padding-top: 304px;
+    }
+    .section-with-media {
+        padding: 1%;
     }
     .metabolism h2 {
         font-size: 1rem;
@@ -1745,21 +1761,30 @@ ul li img {
     .metabolism p {
         font-size: 1vh;
     }
+    .chart-container {
+        width: 100%;
+    }
     ul li {
-        background-color: #f2f2f2;
-        margin-bottom: 10px;
-        padding: 10px 15px;
-        border-radius: 10px;
-        font-size: 1vh;
-        color: rgba(51, 51, 51, 1);
+    
+        
+        padding: 1px 1px;
+
+        font-size: 0.7vh;
+
      
        
+    }
+    .section-with-media {
+        
+        justify-content: flex-start;
     }
     ul li img {
         vertical-align: middle;
         width: 20%;
     }
-  
+    .bar {
+        width: 60px;
+    }
     .mechanisms-section h2 {
         font-size: 1rem;
         
@@ -1773,7 +1798,7 @@ ul li img {
         padding-left: 0;
     }
     .text {
-        font-size: 1.3vh;
+        font-size: 1vh;
     }
     .consequences h1 {
         font-size: 1.5rem;
@@ -1783,8 +1808,9 @@ ul li img {
        max-width: 100%;
 
     }
-    .chart-container {
-        width: 100%;
+    .section-with-media .video-gif {
+        width: 175px;
+        height: 175px;
     }
     .footer-logo{
         width: 50%;
@@ -1819,7 +1845,13 @@ ul li img {
     max-width: 100%;
     height: auto;
 }
-
+}
+.image-text-section {
+    
+    padding: 44px 1%;
+    
+    padding-left: 0;
+}
 .category-button img {
    
     padding: 0;
@@ -1854,6 +1886,17 @@ ul li img {
     
     font-size: 2vh;
 }
+
+@media (max-width: 400px) {
+    .footer-top {
+        font-size: 0.8rem;
+    }
+    .footer-center, .footer-right {
+        font-size: 9px;
+    }
+    .pazzle {
+        height: auto;
+    }
 }
 /* Подключение шрифтов */
 @font-face {
