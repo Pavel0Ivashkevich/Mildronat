@@ -1,3 +1,8 @@
+document.getElementById('navigateButton').addEventListener('click', function() {
+    window.location.href = 'index2.html';
+});
+
+
 document.addEventListener('DOMContentLoaded', () => {
     // Функция для переключения видимости списка источников
     function toggleReferences() {
