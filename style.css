@@ -1405,6 +1405,12 @@ ul li img {
 .page2 {
     margin-bottom: 200px;
 }
+.pazzle2 {
+    top: 70px;
+}
+.consequences2 {
+padding-top: 20px;
+}
  .footer-note p {
     animation: slideUp 0.8s ease-out forwards;
     animation-delay: 0.8s;
@@ -1433,7 +1439,7 @@ ul li img {
     top: 80px;
     left: 90%;
     transform: translateX(-50%); /* Центрирование */
-    color: red; /* Цвет для +25% */
+    color: rgba(182, 32, 23, 1);
     font-family: MyriadProBold;
     font-size: 25px;
     text-align: center;

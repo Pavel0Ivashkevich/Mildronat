@@ -160,12 +160,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Новая функция для обработки прокрутки секций с классом .improvement2
+    function handleScrollImprovementSections() {
+        const sections = document.querySelectorAll('.improvement2');
+        const images = document.querySelectorAll('.table_page2');
+
+        // Анимируем секции с классом .improvement2
+        sections.forEach((section) => {
+            if (isScrolledIntoView(section, 20) && !section.classList.contains('animate')) {
+                section.classList.add('animate');
+            }
+        });
+
+        // Анимируем изображения с классом .table_page2
+        images.forEach((image) => {
+            if (isScrolledIntoView(image, 20) && !image.classList.contains('animate')) {
+                image.classList.add('animate');
+            }
+        });
+    }
+
     function init() {
         handleScrollCharts();
         handleScrollMechanisms();
         handleScrollTreatmentScheme();
         handleScrollAnniversarySection();
         handleScrollAnimations();
+        handleScrollImprovementSections();  // Добавляем вызов новой функции
     }
 
     window.addEventListener('scroll', () => {
@@ -173,6 +194,7 @@ document.addEventListener('DOMContentLoaded', () => {
         handleScrollMechanisms();
         handleScrollTreatmentScheme();
         handleScrollAnniversarySection();
+        handleScrollImprovementSections();  // Добавляем вызов новой функции при прокрутке
     });
 
     init();
@@ -203,31 +225,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (footer) {
         observer.observe(footer);
     }
-});
-document.addEventListener('DOMContentLoaded', () => {
-    function isScrolledIntoView(el, percentVisible = 0) {
-        const rect = el.getBoundingClientRect();
-        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
-        const elementTop = rect.top;
-        const elementBottom = rect.bottom;
-        const visibleHeight = Math.min(windowHeight, elementBottom) - Math.max(0, elementTop);
-        const totalHeight = elementBottom - elementTop;
-        return (visibleHeight / totalHeight) * 100 >= percentVisible;
-    }
-
-    function handleScrollAnimations() {
-        const section = document.querySelector('.improvement2');
-        const image = document.querySelector('.table_page2');
-
-        if (section && isScrolledIntoView(section, 20) && !section.classList.contains('animate')) {
-            section.classList.add('animate');
-        }
-
-        if (image && isScrolledIntoView(image, 20) && !image.classList.contains('animate')) {
-            image.classList.add('animate');
-        }
-    }
-
-    window.addEventListener('scroll', handleScrollAnimations);
-    handleScrollAnimations(); // Проверка при загрузке страницы
 });
