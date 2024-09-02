@@ -78,6 +78,7 @@ header {
 }
 .intro {
     padding: 44px;
+    padding-top: 0;
     position: relative;
 }
 
@@ -694,9 +695,9 @@ ul li img {
 }
 .improvement {
     position: relative;
-    padding: 40px 10%;
+    padding: 40px 0%;
     text-align: left;
-    opacity: 0; 
+    opacity: 1; 
     transform: translateY(30px); 
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
@@ -729,40 +730,28 @@ ul li img {
     animation-delay: 0.5s; 
 }
 
-@keyframes fadeInBackground {
-    from {
-        opacity: 0;
-        transform: scale(1.05);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
-
-
 @keyframes slideDown {
     from {
-        opacity: 0;
         transform: translateY(-20px);
+        opacity: 0;
     }
     to {
-        opacity: 1;
         transform: translateY(0);
+        opacity: 1;
     }
 }
-
 
 @keyframes slideUp {
     from {
-        opacity: 0;
         transform: translateY(20px);
+        opacity: 0;
     }
     to {
-        opacity: 1;
         transform: translateY(0);
+        opacity: 1;
     }
 }
+
 .chart-section {
     padding-top: 200px;
     text-align: center;
@@ -875,7 +864,7 @@ ul li img {
     padding-top: 20px;
     font-family: 'MyriadProRegular';
     opacity: 0;
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    transition: opacity 0.1s ease-out, transform 0.1s ease-out;
     transform: translateY(-20px);
 }
 .bar-value.visible {
@@ -1412,6 +1401,151 @@ ul li img {
     line-height: 10.6px;
     text-align: left;
 }
+/* 2 страница */
+.page2 {
+    margin-bottom: 200px;
+}
+ .footer-note p {
+    animation: slideUp 0.8s ease-out forwards;
+    animation-delay: 0.8s;
+    text-align: center;
+}
+/* Вертикальная надпись "Баллы" */
+.y-axis-label {
+    position: absolute;
+    left: -50px; /* Подкорректируйте значение, чтобы надпись располагалась правильно */
+    top: 70%;
+    transform: translateY(-50%) rotate(-90deg);
+    font-family: MyriadProRegular;
+    font-size: 25px;
+    color: black;
+    opacity: 0;
+    transition: opacity 1.2s ease-out;
+}
+
+.chart-section.visible .y-axis-label {
+    opacity: 1;
+}
+
+/* Метка +25% и p<0.001 */
+.plus-percentage {
+    position: absolute;
+    top: 80px;
+    left: 90%;
+    transform: translateX(-50%); /* Центрирование */
+    color: red; /* Цвет для +25% */
+    font-family: MyriadProBold;
+    font-size: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.percentage {
+    font-family: MyriadProBold;
+}
+
+     .p-value {
+    margin: 0;
+    font-size: 20px;
+    color: black; /* Цвет для p<0.001 */
+    font-family: MyriadProRegular;
+}
+.table_page2 {
+    margin: 29px auto;
+    display: block;
+    
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+    animation-delay: 0.7s;
+}
+
+.table_page2.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+.after-table{
+    left: -20%;
+    position: absolute;
+    top: 70%;
+    transform: translateY(-50%) rotate(-90deg);
+    font-family: MyriadProRegular;
+    font-size: 25px;
+    color: black;
+    opacity: 0;
+    transition: opacity 1.2s ease-out;
+
+}
+.under_table {
+    text-align: start;
+    display: block;
+    padding-left: 10%;
+    padding-bottom: 150px;
+    padding-top: 300px;
+    color: rgba(51, 51, 51, 1);
+    font-family: MyriadProBold;
+    font-size: 4vh;
+}
+.improvement2 {
+    position: relative;
+    padding: 40px 0;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.improvement2.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.improvement2 h2 {
+    font-size: 2.4rem;
+    color: rgba(182, 32, 23, 1);
+    margin-bottom: 20px;
+    font-family: MyriadProBold;
+    padding-top: 100px;
+    padding-left: 10%;
+    opacity: 0;
+    animation: slideDown 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.improvement2 p {
+    font-size: 1.125rem;
+    line-height: 1.3;
+    color: rgba(22, 48, 72, 1);
+    font-family: MyriadProRegular;
+    padding-left: 10%;
+    opacity: 0;
+    animation: slideUp 1s ease-out forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* адаптив */
 @media (max-width: 1920px) {
     sup { 
@@ -1441,6 +1575,9 @@ ul li img {
 @media (max-width: 1400px) {
     sup {
         font-size: 10px;
+    }
+    .table_page2 {
+        width: 90%;
     }
     .info-box { 
         margin-left: 6% ;

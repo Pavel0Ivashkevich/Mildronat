@@ -1,17 +1,17 @@
-document.getElementById('navigateButton').addEventListener('click', function() {
-    window.location.href = 'index2.html';
-});
-
-
 document.addEventListener('DOMContentLoaded', () => {
     // Функция для переключения видимости списка источников
     function toggleReferences() {
         const referencesList = document.getElementById('referencesList');
-        referencesList.classList.toggle('visible');
+        if (referencesList) {
+            referencesList.classList.toggle('visible');
+        }
     }
 
     // Добавляем обработчик события клика для кнопки "Источники"
-    document.querySelector('.references-button').addEventListener('click', toggleReferences);
+    const referencesButton = document.querySelector('.references-button');
+    if (referencesButton) {
+        referencesButton.addEventListener('click', toggleReferences);
+    }
 
     // Функция для проверки видимости элемента
     function isScrolledIntoView(el, percentVisible = 0) {
@@ -27,38 +27,43 @@ document.addEventListener('DOMContentLoaded', () => {
     // Функция для анимации баров
     function animateBars(section) {
         const bars = section.querySelectorAll('.bar');
-        const barGroups = section.querySelectorAll('.bar-group');
         let animationsComplete = 0;
 
-        function animateHeight(bar) {
+        bars.forEach((bar) => {
             const targetHeight = parseInt(bar.getAttribute('data-height'), 10);
             let currentHeight = 0;
 
             function updateBarHeight() {
                 if (currentHeight < targetHeight) {
-                    currentHeight += Math.min(2, targetHeight - currentHeight);
+                    currentHeight += Math.min(5, targetHeight - currentHeight);
                     bar.style.height = currentHeight + 'px';
                     requestAnimationFrame(updateBarHeight);
                 } else {
                     bar.style.height = targetHeight + 'px';
                     if (++animationsComplete === bars.length) {
-                        setTimeout(animateValues, 500);
+                        animateValues();
                     }
                 }
             }
 
             updateBarHeight();
-        }
+        });
 
         function animateValues() {
             bars.forEach((bar) => {
                 const valueElement = bar.querySelector('.bar-value');
-                const targetValue = parseFloat(valueElement.getAttribute('data-target-value'));
+                let targetValue = parseFloat(valueElement.textContent.replace(',', '.'));
+
+                if (isNaN(targetValue)) {
+                    console.error('Invalid target value:', valueElement.textContent);
+                    targetValue = 0;
+                }
+
                 let currentValue = 0;
 
                 function updateValue() {
                     if (currentValue < targetValue) {
-                        currentValue += Math.min(0.02, targetValue - currentValue);
+                        currentValue += Math.min(0.1, targetValue - currentValue);
                         valueElement.textContent = currentValue.toFixed(2).replace('.', ',');
                         requestAnimationFrame(updateValue);
                     } else {
@@ -71,20 +76,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             // Плавное появление дополнительных элементов
-            section.querySelector('.p-value-container').classList.add('visible');
-            section.querySelector('.to').classList.add('visible');
-            section.querySelector('.legend').classList.add('visible');
-            section.querySelector('.arrow-container').classList.add('visible');
-            section.querySelector('.table-button').classList.add('visible');
+            setTimeout(() => {
+                section.querySelectorAll('.p-value-container, .to, .legend, .arrow-container, .table-button')
+                    .forEach(el => el.classList.add('visible'));
+            }, 300);
         }
-
-        bars.forEach((bar) => {
-            const valueElement = bar.querySelector('.bar-value');
-            const targetValue = parseFloat(valueElement.textContent.replace(',', '.')) || 0;
-            valueElement.setAttribute('data-target-value', targetValue.toFixed(2));
-            valueElement.textContent = '0,00';
-            animateHeight(bar);
-        });
     }
 
     // Функция для обработки прокрутки секций графиков
@@ -92,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const sections = document.querySelectorAll('.chart-section');
         sections.forEach((section) => {
             const chartContainer = section.querySelector('.chart-container');
-            if (isScrolledIntoView(chartContainer) && !section.classList.contains('visible')) {
+            if (chartContainer && isScrolledIntoView(chartContainer) && !section.classList.contains('visible')) {
                 section.classList.add('visible');
                 animateBars(section);
             }
@@ -129,15 +125,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Функция для обработки прокрутки секций с анимацией
     function handleScrollAnimations() {
-        const introSection = document.querySelector('.intro');
-        const sectionWithMedia = document.querySelector('.section-with-media');
-        const consequencesSection = document.querySelector('.consequences');
-        const centeredSection = document.querySelector('.centered-section');
-        const imageTextSection = document.querySelector('.image-text-section');
-        const influenceSection = document.querySelector('.influence-section');
-        const improvementSection = document.querySelector('.improvement');
-        const anniversarySection = document.querySelector('.anniversary-section');
-        const referencesButton = document.querySelector('.references-button');
+        const sections = [
+            '.intro',
+            '.section-with-media',
+            '.consequences',
+            '.centered-section',
+            '.image-text-section',
+            '.influence-section',
+            '.improvement',
+            '.anniversary-section'
+        ];
 
         const observerOptions = {
             threshold: 0.6
@@ -147,21 +144,20 @@ document.addEventListener('DOMContentLoaded', () => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('animate');
-                    if (entry.target === anniversarySection) {
-                        referencesButton.classList.add('animate');
+                    if (entry.target.classList.contains('anniversary-section')) {
+                        const referencesButton = document.querySelector('.references-button');
+                        if (referencesButton) {
+                            referencesButton.classList.add('animate');
+                        }
                     }
                 }
             });
         }, observerOptions);
 
-        if (introSection) observer.observe(introSection);
-        if (sectionWithMedia) observer.observe(sectionWithMedia);
-        if (consequencesSection) observer.observe(consequencesSection);
-        if (centeredSection) observer.observe(centeredSection);
-        if (imageTextSection) observer.observe(imageTextSection);
-        if (influenceSection) observer.observe(influenceSection);
-        if (improvementSection) observer.observe(improvementSection);
-        if (anniversarySection) observer.observe(anniversarySection);
+        sections.forEach(selector => {
+            const section = document.querySelector(selector);
+            if (section) observer.observe(section);
+        });
     }
 
     function init() {
@@ -182,6 +178,12 @@ document.addEventListener('DOMContentLoaded', () => {
     init();
 });
 
+// Обработка кнопки для перехода на другую страницу
+document.getElementById('navigateButton').addEventListener('click', function() {
+    window.location.href = 'index2.html';
+});
+
+// Отслеживание видимости футера
 document.addEventListener('DOMContentLoaded', () => {
     const footer = document.querySelector('.footer');
 
@@ -198,5 +200,34 @@ document.addEventListener('DOMContentLoaded', () => {
         threshold: 0.2 
     });
 
-    observer.observe(footer);
+    if (footer) {
+        observer.observe(footer);
+    }
+});
+document.addEventListener('DOMContentLoaded', () => {
+    function isScrolledIntoView(el, percentVisible = 0) {
+        const rect = el.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        const elementTop = rect.top;
+        const elementBottom = rect.bottom;
+        const visibleHeight = Math.min(windowHeight, elementBottom) - Math.max(0, elementTop);
+        const totalHeight = elementBottom - elementTop;
+        return (visibleHeight / totalHeight) * 100 >= percentVisible;
+    }
+
+    function handleScrollAnimations() {
+        const section = document.querySelector('.improvement2');
+        const image = document.querySelector('.table_page2');
+
+        if (section && isScrolledIntoView(section, 20) && !section.classList.contains('animate')) {
+            section.classList.add('animate');
+        }
+
+        if (image && isScrolledIntoView(image, 20) && !image.classList.contains('animate')) {
+            image.classList.add('animate');
+        }
+    }
+
+    window.addEventListener('scroll', handleScrollAnimations);
+    handleScrollAnimations(); // Проверка при загрузке страницы
 });
