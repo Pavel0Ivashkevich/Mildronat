@@ -1845,7 +1845,7 @@ ul li img {
     max-width: 100%;
     height: auto;
 }
-}
+
 .image-text-section {
     
     padding: 44px 1%;
@@ -1886,7 +1886,7 @@ ul li img {
     
     font-size: 2vh;
 }
-
+}
 @media (max-width: 400px) {
     .footer-top {
         font-size: 0.8rem;
