@@ -11,7 +11,10 @@
     <header>
         <section class="intro">
             <img class="backgroung_section1" src="img/backgroung_section1.png">
-            <h1>Откройте новые возможности<br> лечения пациентов с ХИМ <button class="info-box" id="navigateButton">Пациент с ИБС и СД 2 типа</button></h1>
+            <div class="intro-box">
+            <h1>Откройте новые возможности<br> лечения пациентов с ХИМ </h1>
+            <button class="info-box" id="navigateButton">Перейти в раздел пациент с ИБС и СД 2 типа</button>
+        </div>
             <p><strong>Пациенты с хронической ишемией мозга (ХИМ)</strong><br>— не редкость в неврологической практике. Чаще всего ХИМ страдают полиморбидные пациенты среднего и пожилого возраста <sup>1</sup>.</p>
             
         </section>
@@ -31,7 +34,12 @@
             <section class="consequences">
                 <h1>Механизмы и последствия<br>развития ХИМ</h1>
                 <p>Нарушения кровоснабжения головного мозга инициируют каскад метаболических реакций, который приводит к апоптозу и некрозу нейронов <sup>2</sup>.</p>
-                <img class="pazzle" src="img/pazzle.png">
+                <picture>
+                    <!-- Меньшая версия для маленьких экранов -->
+                    <source srcset="img/pazzle-small.png" media="(max-width: 600px)">
+                    <!-- Большая версия для больших экранов -->
+                    <img class="pazzle" src="img/pazzle.png" alt="Pazzle Image">
+                </picture>
                 <h2>Перспективное направление лечения<br>
                     хронических цереброваскулярных заболеваний<br>
                     — применение препаратов, которые <sup>2</sup>:</h2>
@@ -370,7 +378,7 @@
     </div>
 </section>
 <section class="treatment-scheme">
-    <h2 class="fade-in">Схема приема Милдроната® в комплексной <br>терапии ХИМ <sup>4</sup></h2>
+    <h2 class="fade-in">Схема приема Милдроната® в комплексной терапии ХИМ <sup>4</sup></h2>
     <p class="description fade-in">
         Полный курс лечения в суточной дозе 1 грамм – <br>доказанное снижение симптомов у пациентов с ХИМ <sup>4</sup>
     </p>
@@ -421,7 +429,7 @@
                 Москва, Варшавское ш., д. 74, корп. 3  
             </div>
             <div class="footer-right">
-                Тел. +7 (495) 771 65 05<br><br><br><br>
+                Тел. <span>+7 (495) 771 65 05</span><br><br><br>
                 E-mail: office@grindeks.ru
             </div>
         </div>
