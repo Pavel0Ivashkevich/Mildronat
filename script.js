@@ -6,6 +6,24 @@ document.addEventListener('DOMContentLoaded', () => {
             referencesList.classList.toggle('visible');
         }
     }
+// видео
+    document.addEventListener('DOMContentLoaded', () => {
+        const video = document.querySelector('.video-gif video');
+        
+        if (video) {
+            // Автоматическое воспроизведение видео
+            video.play().catch(error => {
+                console.error('Автоматическое воспроизведение не поддерживается:', error);
+            });
+    
+            // Событие завершения видео
+            video.addEventListener('ended', () => {
+                video.currentTime = 0; // Возвращаемся к началу видео
+                video.play(); // Запускаем видео заново
+            });
+        }
+    });
+
 
     // Добавляем обработчик события клика для кнопки "Источники"
     const referencesButton = document.querySelector('.references-button');

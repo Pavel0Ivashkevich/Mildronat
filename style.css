@@ -2007,6 +2007,10 @@ ul li img {
     .improvement p {
         font-size: 1rem;
     }
+    .tbl_prg{
+        position: relative;
+        top:54px;
+    }
     .chart-section {
         padding-top: 30px;
     }
@@ -2127,11 +2131,19 @@ ul li img {
     top: 45%;
     left: 20px;
 }
+.under_table {
+    font-size: 3vh;
+    padding-top: 0;
+    padding-bottom: 30px;
+}
 .footer.animate {
     padding-top: 0;
 }
 .footer {
     height: auto;
+}
+.after-table {
+    left: -38%;
 }
 }
 
