@@ -106,7 +106,7 @@ header {
 .intro-box {
     display: flex;
     padding-top: 20px;
-    justify-content: space-around;
+    justify-content: space-between;
 }
 .info-box {
     
@@ -1886,6 +1886,11 @@ ul li img {
         font-size: 0.6rem;
         
     }
+
+.intro-box {
+ 
+    justify-content: space-around;
+}
 .info-box2{
     width: 75%;
 }
