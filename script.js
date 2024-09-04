@@ -7,22 +7,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 // видео
-    document.addEventListener('DOMContentLoaded', () => {
-        const video = document.querySelector('.video-gif video');
-        
-        if (video) {
-            // Автоматическое воспроизведение видео
+document.addEventListener('DOMContentLoaded', () => {
+    const video = document.getElementById('myVideo');
+
+    if (video) {
+        // Попытка воспроизведения видео
+        const playVideo = () => {
             video.play().catch(error => {
-                console.error('Автоматическое воспроизведение не поддерживается:', error);
+                console.error('Ошибка при автоматическом воспроизведении:', error);
             });
-    
-            // Событие завершения видео
-            video.addEventListener('ended', () => {
-                video.currentTime = 0; // Возвращаемся к началу видео
-                video.play(); // Запускаем видео заново
-            });
-        }
-    });
+        };
+
+        // Событие для начала воспроизведения, когда видео готово
+        video.addEventListener('canplaythrough', playVideo);
+
+        // Автоматический перезапуск после завершения
+        video.addEventListener('ended', () => {
+            video.currentTime = 0;
+            playVideo();
+        });
+
+        // Если браузер блокирует autoplay, воспроизведение начнется при клике
+        document.addEventListener('click', playVideo);
+    }
+});
 
 
     // Добавляем обработчик события клика для кнопки "Источники"
