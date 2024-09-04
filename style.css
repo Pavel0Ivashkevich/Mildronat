@@ -2025,11 +2025,15 @@ ul li img {
     }
     .consequences h1 {
         font-size: 1.5rem;
+        right: 20px;
+        position: relative;
         
     }
     .consequences p {
        max-width: 100%;
        font-size: 1rem;
+       right: 20px;
+       position: relative;
 
     }
     .section-with-media .video-gif {
@@ -2115,6 +2119,7 @@ ul li img {
 .pazzle {
     height: auto;
     top: 45%;
+    left: 20px;
 }
 .footer.animate {
     padding-top: 0;
