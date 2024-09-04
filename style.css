@@ -1936,6 +1936,7 @@ ul li img {
         align-content: space-between;
         justify-content: flex-start;
         flex-wrap: wrap;
+        padding-left: 10px;
     }
     .metabolism p {
         font-size: 1vh;
