@@ -1967,6 +1967,8 @@ ul li img {
     .table-button {
         font-size: 2vh;
         height: 10px;
+        padding: 20px;
+        width: 80%;
     }
     ul li {
     
@@ -2063,7 +2065,11 @@ ul li img {
 .treatment-scheme h2 {
     padding-top: 30px;
     font-size: 1.5rem;
+    text-align: center;
 
+}
+.image {
+    max-width: 90%;
 }
 .treatment-scheme {
     padding: 0;
@@ -2071,6 +2077,7 @@ ul li img {
 .treatment-scheme .description {
     font-family: MyriadProBold;
     font-size: 1rem;
+    padding-left: 10px;
 }
 .arrow-container img {
   
@@ -2103,17 +2110,18 @@ ul li img {
     font-size: 2vh;
 }
 .footer-top {
-    font-size: 1.4vh;
+    font-size: 2vh;
 }
 .footer-logo {
-    width: 30%;
-    height: 30%;
+    width: 20%;
+    height: 20%;
 }
 .images-container {
     flex-direction: column;
     padding-top: 10px;
     gap: 30px;
     padding-bottom: 50px;
+    padding-left: 10px;
 }
 .image-item1 {
     
