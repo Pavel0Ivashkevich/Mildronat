@@ -10,27 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', () => {
     const video = document.getElementById('myVideo');
 
-    if (video) {
-        // Попытка воспроизведения видео
-        const playVideo = () => {
-            video.play().catch(error => {
-                console.error('Ошибка при автоматическом воспроизведении:', error);
-            });
-        };
+    // Убедитесь, что видео действительно воспроизводится автоматически
+    video.play().catch(error => {
+        console.log('Автопроигрывание заблокировано:', error);
+    });
 
-        // Событие для начала воспроизведения, когда видео готово
-        video.addEventListener('canplaythrough', playVideo);
-
-        // Автоматический перезапуск после завершения
-        video.addEventListener('ended', () => {
-            video.currentTime = 0;
-            playVideo();
-        });
-
-        // Если браузер блокирует autoplay, воспроизведение начнется при клике
-        document.addEventListener('click', playVideo);
-    }
+    // Воспроизведение заново, когда видео закончится
+    video.addEventListener('ended', () => {
+        video.currentTime = 0;
+        video.play();
+    });
 });
+
 
 
     // Добавляем обработчик события клика для кнопки "Источники"
