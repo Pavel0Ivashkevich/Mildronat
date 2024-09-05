@@ -2116,6 +2116,9 @@ ul li img {
     width: 20%;
     height: 20%;
 }
+.footer-center {
+    width: 139px;
+}
 .images-container {
     flex-direction: column;
     padding-top: 10px;
