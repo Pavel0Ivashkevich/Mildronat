@@ -6,25 +6,21 @@ document.addEventListener('DOMContentLoaded', () => {
             referencesList.classList.toggle('visible');
         }
     }
-// видео
-document.addEventListener('DOMContentLoaded', () => {
+
+    // Видео
     const video = document.getElementById('myVideo');
+    if (video) {
+        video.play().catch(error => {
+            console.log('Автопроигрывание заблокировано:', error);
+        });
 
-    // Убедитесь, что видео действительно воспроизводится автоматически
-    video.play().catch(error => {
-        console.log('Автопроигрывание заблокировано:', error);
-    });
+        video.addEventListener('ended', () => {
+            video.currentTime = 0;
+            video.play();
+        });
+    }
 
-    // Воспроизведение заново, когда видео закончится
-    video.addEventListener('ended', () => {
-        video.currentTime = 0;
-        video.play();
-    });
-});
-
-
-
-    // Добавляем обработчик события клика для кнопки "Источники"
+    // Обработчик события клика для кнопки "Источники"
     const referencesButton = document.querySelector('.references-button');
     if (referencesButton) {
         referencesButton.addEventListener('click', toggleReferences);
@@ -41,63 +37,53 @@ document.addEventListener('DOMContentLoaded', () => {
         return (visibleHeight / totalHeight) * 100 >= percentVisible;
     }
 
-    // Функция для анимации баров
+    // Оптимизированная функция для анимации баров и значений
     function animateBars(section) {
         const bars = section.querySelectorAll('.bar');
-        let animationsComplete = 0;
-
         bars.forEach((bar) => {
             const targetHeight = parseInt(bar.getAttribute('data-height'), 10);
             let currentHeight = 0;
+            const valueElement = bar.querySelector('.bar-value');
+            let targetValue = parseFloat(valueElement.textContent.replace(',', '.'));
+            let currentValue = 0;
 
-            function updateBarHeight() {
-                if (currentHeight < targetHeight) {
-                    currentHeight += Math.min(5, targetHeight - currentHeight);
-                    bar.style.height = currentHeight + 'px';
-                    requestAnimationFrame(updateBarHeight);
+            if (isNaN(targetValue)) {
+                console.error('Invalid target value:', valueElement.textContent);
+                targetValue = 0;
+            }
+
+            // Анимация столбца и значения параллельно
+            function updateBar() {
+                const heightStep = Math.min(5, targetHeight - currentHeight);
+                const valueStep = Math.min(0.1, targetValue - currentValue);
+
+                if (currentHeight < targetHeight || currentValue < targetValue) {
+                    currentHeight += heightStep;
+                    bar.style.height = `${currentHeight}px`;
+
+                    currentValue += valueStep;
+                    valueElement.textContent = currentValue.toFixed(1).replace('.', ',');
+
+                    // Одновременное появление значения
+                    valueElement.classList.add('visible');
+                    
+                    requestAnimationFrame(updateBar);
                 } else {
-                    bar.style.height = targetHeight + 'px';
-                    if (++animationsComplete === bars.length) {
-                        animateValues();
-                    }
+                    // Окончательная установка высоты и значения
+                    bar.style.height = `${targetHeight}px`;
+                    valueElement.textContent = targetValue.toFixed(1).replace('.', ',');
+                    valueElement.classList.add('visible');
                 }
             }
 
-            updateBarHeight();
+            updateBar();
         });
 
-        function animateValues() {
-            bars.forEach((bar) => {
-                const valueElement = bar.querySelector('.bar-value');
-                let targetValue = parseFloat(valueElement.textContent.replace(',', '.'));
-
-                if (isNaN(targetValue)) {
-                    console.error('Invalid target value:', valueElement.textContent);
-                    targetValue = 0;
-                }
-
-                let currentValue = 0;
-
-                function updateValue() {
-                    if (currentValue < targetValue) {
-                        currentValue += Math.min(0.1, targetValue - currentValue);
-                        valueElement.textContent = currentValue.toFixed(2).replace('.', ',');
-                        requestAnimationFrame(updateValue);
-                    } else {
-                        valueElement.textContent = targetValue.toFixed(2).replace('.', ',');
-                        valueElement.classList.add('visible');
-                    }
-                }
-
-                updateValue();
-            });
-
-            // Плавное появление дополнительных элементов
-            setTimeout(() => {
-                section.querySelectorAll('.p-value-container, .to, .legend, .arrow-container, .table-button')
-                    .forEach(el => el.classList.add('visible'));
-            }, 300);
-        }
+        // Плавное появление дополнительных элементов через 100 мс после завершения анимации баров
+        setTimeout(() => {
+            section.querySelectorAll('.p-value-container, .to, .legend, .arrow-container, .table-button')
+                .forEach(el => el.classList.add('visible'));
+        }, 100);
     }
 
     // Функция для обработки прокрутки секций графиков
@@ -105,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const sections = document.querySelectorAll('.chart-section');
         sections.forEach((section) => {
             const chartContainer = section.querySelector('.chart-container');
-            if (chartContainer && isScrolledIntoView(chartContainer) && !section.classList.contains('visible')) {
+            if (chartContainer && isScrolledIntoView(chartContainer, 10) && !section.classList.contains('visible')) {
                 section.classList.add('visible');
                 animateBars(section);
             }
@@ -132,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Функция для обработки прокрутки секции
+    // Функция для обработки прокрутки секции юбилея
     function handleScrollAnniversarySection() {
         const section = document.querySelector('.anniversary-section');
         if (section && isScrolledIntoView(section) && !section.classList.contains('visible')) {
@@ -197,13 +183,14 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // Инициализация всех обработчиков прокрутки
     function init() {
         handleScrollCharts();
         handleScrollMechanisms();
         handleScrollTreatmentScheme();
         handleScrollAnniversarySection();
         handleScrollAnimations();
-        handleScrollImprovementSections();  // Добавляем вызов новой функции
+        handleScrollImprovementSections();
     }
 
     window.addEventListener('scroll', () => {
@@ -211,16 +198,19 @@ document.addEventListener('DOMContentLoaded', () => {
         handleScrollMechanisms();
         handleScrollTreatmentScheme();
         handleScrollAnniversarySection();
-        handleScrollImprovementSections();  // Добавляем вызов новой функции при прокрутке
+        handleScrollImprovementSections();
     });
 
     init();
 });
 
 // Обработка кнопки для перехода на другую страницу
-document.getElementById('navigateButton').addEventListener('click', function() {
-    window.location.href = 'index2.html';
-});
+const navigateButton = document.getElementById('navigateButton');
+if (navigateButton) {
+    navigateButton.addEventListener('click', function() {
+        window.location.href = 'index2.html';
+    });
+}
 
 // Отслеживание видимости футера
 document.addEventListener('DOMContentLoaded', () => {

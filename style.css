@@ -684,6 +684,7 @@ ul li img {
 .center-section {
     width: 35%;
     text-align: center;
+    justify-content: space-around;
     
 }
 
@@ -1112,6 +1113,7 @@ ul li img {
     padding: 40px;
     padding-left: 10%;
     padding-top: 100px;
+    padding-bottom: 75px;
 }
 
 .treatment-scheme h2 {
@@ -1927,7 +1929,7 @@ ul li img {
         padding: 1%;
         align-items: center;
      
-        margin-top: 50px;
+        margin-top: 80px;
       
     }
     .section-with-media video {
@@ -1989,7 +1991,7 @@ ul li img {
        
     }
     .section-with-media {
-        
+        flex-direction: column-reverse; 
         justify-content: flex-start;
     }
     .influence-section {
