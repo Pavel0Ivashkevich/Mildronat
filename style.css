@@ -308,8 +308,8 @@ header {
     position: absolute;
     top: 20px;
     z-index: 1;
-    right: 0;
     opacity: 0;
+    
 }
 
 .centered-section {
@@ -723,7 +723,7 @@ ul li img {
     color: rgba(182, 32, 23, 1);
     margin-bottom: 20px;
     font-family: MyriadProBold;
-    padding-top: 100px;
+    padding-top: 10px;
     padding-left: 10%;
     opacity: 0;
     animation: slideDown 1s ease-out forwards;
@@ -764,7 +764,7 @@ ul li img {
 }
 
 .chart-section {
-    padding-top: 200px;
+    padding-top: 100px;
     text-align: center;
     opacity: 0; 
     transform: translateY(50px); 
@@ -1138,7 +1138,7 @@ ul li img {
 
 .images-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-top: 100px;
 }
 
@@ -1577,12 +1577,18 @@ overflow: hidden;
         gap: 9%;
     }
     .info-box {
-        margin-right: 32%;
+        margin-right: 18%;
         height: 70.41px;
         font-size: 1.2rem;
     }
     .consequences h2 {
         padding-top: 368px;
+    }
+    .intro h1 {
+        font-size: 3.5rem;
+    }
+    .grid-container {
+        max-width: 84%;
     }
 }
 @media (max-width: 1920px) {
@@ -1599,7 +1605,7 @@ overflow: hidden;
 .grid-container {
 
     gap: 20px;
-    max-width: 80%;
+    max-width: 84%;
 }
 .section-with-media .video-gif {
     width: 500px;
@@ -1623,6 +1629,9 @@ overflow: hidden;
     .section-with-media .video-gif {
         width: 400px;
         height: 400px;
+    }
+    .pazzle {
+        right: 0;
     }
 }
 @media (max-width: 1400px) {
@@ -1849,7 +1858,7 @@ overflow: hidden;
 }
 @media (max-width: 700px) {
     .pazzle {
-        top: 35%;
+        top: 16%;
     }
     
     .grid-container {
