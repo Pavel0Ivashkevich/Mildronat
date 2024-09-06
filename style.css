@@ -25,7 +25,7 @@ body {
 
 header {
  
-    padding-left: 10%;
+    padding-left: 8%;
     text-align: left;
 }
 .backgroung_section1 {
@@ -161,9 +161,8 @@ header {
 .section-with-media {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 44px 3%;
-    padding-left: 10%;
+    
+    
     opacity: 0; 
     transform: translateY(50px); 
     transition: opacity 1s ease-out, transform 1s ease-out;
@@ -411,7 +410,7 @@ header {
 .image-text-section {
     display: flex;
     justify-content: space-between;
-    padding: 44px 4%;
+    padding: 44px 10%;
     padding-top: 80px;
     padding-left: 10%;
     opacity: 0; 
@@ -786,7 +785,7 @@ ul li img {
 }
 
 .chart-container {
-    width: 800px; 
+    width: 451px; 
     height: 400px;
     margin: 50px auto;
     position: relative;
@@ -838,7 +837,7 @@ ul li img {
 }
 
 .bar {
-    width: 105px;
+    width: 76px;
     background-color: rgba(187, 31, 43, 1);
     border-radius: 3px 3px 0 0;
     transform-origin: bottom;
@@ -854,12 +853,12 @@ ul li img {
 
 
 .bar-group:nth-child(2) {
-    margin-right: 30px;
+    margin-right: 0px;
 }
 
 
 .bar-group + .bar-group {
-    margin-left: 30px;
+    margin-left: 0px;
 }
 
 .bar-value {
@@ -901,8 +900,8 @@ ul li img {
     opacity: 1;
 }
 .p-value {
-   
-    font-size: 20px;
+    font-size: 15px;
+    padding-right: 34px;
     font-family: MyriadProRegular;
     color: rgba(51, 51, 51, 1);
    
@@ -1039,7 +1038,7 @@ ul li img {
     color: rgba(182, 32, 23, 1);
     margin-bottom: 20px;
     text-align: start;
-    padding-left: 70px;
+    padding-left: 9%;
     opacity: 0; 
     transform: translateY(-20px); 
     transition: opacity 1s ease-out, transform 1s ease-out; 
@@ -1465,12 +1464,7 @@ overflow: hidden;
     font-family: MyriadProBold;
 }
 
-     .p-value {
-    margin: 0;
-    font-size: 20px;
-    color: black; /* Цвет для p<0.001 */
-    font-family: MyriadProRegular;
-}
+   
 .table_page2 {
     margin: 29px auto;
     display: block;
@@ -1575,14 +1569,15 @@ overflow: hidden;
 @media (max-width: 2560px) {
 
     .section-with-media {
-        justify-content: space-around;
-        padding: 44px 15%;
+        gap: 10%;
+        padding: 41px 243px 44px 10%;
+        
     }
     .centered-section {
-        justify-content: space-around;
+        gap: 9%;
     }
     .info-box {
-        margin-right: 223px;
+        margin-right: 32%;
         height: 70.41px;
         font-size: 1.2rem;
     }
@@ -1594,35 +1589,41 @@ overflow: hidden;
     sup { 
         font-size: 15px;
     }
-    .section-with-media {
-        
-        padding: 44px 15%;
-       
-    }
+   
     
 
 .centered-section {
   
-    gap: 10%;
+    gap: 5%;
 }
 .grid-container {
 
     gap: 20px;
-    max-width: 1500px;
+    max-width: 80%;
 }
 .section-with-media .video-gif {
-    width: 450px;
-    height: 450px;
+    width: 500px;
+    height: 500px;
+    
 }
 .images-container {
    
     justify-content: space-around;
 }
 .info-box {
-    margin-right: 223px;
+  
     height: 70.41px;
     font-size: 1.2rem;
 }
+}
+@media (max-width: 1600px) {
+    .info-box {
+        margin-right: 0%;
+    }
+    .section-with-media .video-gif {
+        width: 400px;
+        height: 400px;
+    }
 }
 @media (max-width: 1400px) {
     sup {
@@ -1631,9 +1632,7 @@ overflow: hidden;
     .table_page2 {
         width: 90%;
     }
-    .info-box { 
-        margin-left: 6% ;
-    }
+    
     .intro h1 {
         font-size: 2.2rem;
     }
@@ -1641,16 +1640,13 @@ overflow: hidden;
         width: 50%;
         height: auto;
     }
-    .section-with-media .video-gif {
-        width: 400px;
-        height: 400px;
-    }
+    
     .pazzle {
         width: 100%;
         top: 100px;
     }
     .centered-section {
-        gap: 10px;
+        gap: 27px;
     }
     .image-text-section img {
         max-width: 50%;
@@ -1680,9 +1676,7 @@ overflow: hidden;
     .anniversary {
         width: 80%;
     }
-    .info-box {
-        margin-right: 0px;
-    }
+   
 }
 @media (max-width: 1000px) {
     .intro h1 {
