@@ -481,7 +481,10 @@ header {
     font-size: 1.125rem;
     line-height: 1.3;
     color: rgba(22, 48, 72, 1);
-    font-family: MyriadProRegular;
+    font-family: MyriadProBold;
+    background-color: rgba(235, 235, 235, 1);
+    border-radius: 16px;
+    padding: 31px 24px;
 }
 .influence-section {
     padding: 40px 10%;
@@ -1418,6 +1421,7 @@ ul li img {
 }
 .consequences2 {
 padding-top: 20px;
+overflow: hidden;
 }
  .footer-note p {
     animation: slideUp 0.8s ease-out forwards;
@@ -1497,7 +1501,7 @@ padding-top: 20px;
     padding-left: 10%;
     padding-bottom: 150px;
     padding-top: 300px;
-    color: rgba(51, 51, 51, 1);
+    color: rgba(182, 32, 23, 1);
     font-family: MyriadProBold;
     font-size: 4vh;
 }
@@ -2144,8 +2148,9 @@ ul li img {
 }
 .pazzle {
     height: auto;
-    top: 45%;
+    top: 49%;
     left: 20px;
+    object-fit: cover;
 }
 .under_table {
     font-size: 3vh;
