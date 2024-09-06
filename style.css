@@ -1576,11 +1576,19 @@ overflow: hidden;
 
     .section-with-media {
         justify-content: space-around;
+        padding: 44px 15%;
     }
     .centered-section {
         justify-content: space-around;
     }
-    
+    .info-box {
+        margin-right: 223px;
+        height: 70.41px;
+        font-size: 1.2rem;
+    }
+    .consequences h2 {
+        padding-top: 368px;
+    }
 }
 @media (max-width: 1920px) {
     sup { 
@@ -1591,6 +1599,7 @@ overflow: hidden;
         padding: 44px 15%;
        
     }
+    
 
 .centered-section {
   
@@ -1608,6 +1617,11 @@ overflow: hidden;
 .images-container {
    
     justify-content: space-around;
+}
+.info-box {
+    margin-right: 223px;
+    height: 70.41px;
+    font-size: 1.2rem;
 }
 }
 @media (max-width: 1400px) {
@@ -1665,6 +1679,9 @@ overflow: hidden;
     }
     .anniversary {
         width: 80%;
+    }
+    .info-box {
+        margin-right: 0px;
     }
 }
 @media (max-width: 1000px) {
