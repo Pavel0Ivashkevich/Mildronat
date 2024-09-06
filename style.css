@@ -1572,6 +1572,16 @@ overflow: hidden;
 }
 
 /* адаптив */
+@media (max-width: 2560px) {
+
+    .section-with-media {
+        justify-content: space-around;
+    }
+    .centered-section {
+        justify-content: space-around;
+    }
+    
+}
 @media (max-width: 1920px) {
     sup { 
         font-size: 15px;
@@ -1591,7 +1601,10 @@ overflow: hidden;
     gap: 20px;
     max-width: 1500px;
 }
-
+.section-with-media .video-gif {
+    width: 450px;
+    height: 450px;
+}
 .images-container {
    
     justify-content: space-around;
