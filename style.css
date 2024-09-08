@@ -1928,6 +1928,11 @@ ul li img {
 }
 }
 @media (max-width: 500px) {
+    .backgroung_section1 {
+        right: -60%;
+        bottom: -39%;
+
+    }
     .intro-box {
         padding: 0;
         justify-content: flex-start;
@@ -2209,7 +2214,7 @@ ul li img {
 .pazzle {
     height: auto;
     top: 47%;
-    
+    width: 314px;
     object-fit: cover;
 }
 .pazzle2 {
