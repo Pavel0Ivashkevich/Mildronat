@@ -1568,8 +1568,13 @@ overflow: hidden;
 /* адаптив */
 @media (max-width: 2560px) {
 
+    .section-with-media .video-gif {
+        width: 674px;
+        height: 674px;
+        
+    }
     .section-with-media {
-        gap: 10%;
+        gap: 14%;
         padding: 41px 243px 44px 10%;
         
     }
@@ -1607,11 +1612,7 @@ overflow: hidden;
     gap: 20px;
     max-width: 84%;
 }
-.section-with-media .video-gif {
-    width: 500px;
-    height: 500px;
-    
-}
+
 .images-container {
    
     justify-content: space-around;
@@ -1625,6 +1626,9 @@ overflow: hidden;
 @media (max-width: 1600px) {
     .info-box {
         margin-right: 0%;
+    }
+    .section-with-media {
+        gap: 10%;
     }
     .section-with-media .video-gif {
         width: 400px;
@@ -2183,7 +2187,7 @@ ul li img {
 }
 .pazzle {
     height: auto;
-    top: 45%;
+    top: 40%;
     left: 20px;
     object-fit: cover;
 }
