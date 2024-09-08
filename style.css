@@ -1658,7 +1658,7 @@ overflow: hidden;
     }
     
     .pazzle {
-        width: 100%;
+        width: 90%;
         top: 100px;
     }
     .centered-section {
@@ -1717,7 +1717,7 @@ overflow: hidden;
         height: 250px;
     }
     .pazzle {
-        width: 100%;
+        width: 90%;
         height: 60%;
     }
     .footer-top {
@@ -1969,12 +1969,12 @@ ul li img {
         padding: 1%;
         align-items: center;
      
-        margin-top: 80px;
+        margin-top: 100px;
       
     }
     .section-with-media video {
-        width: 70%;
-        height: 65%;
+        width: 85%;
+        height: 85%;
         object-fit: cover;
         border-radius: 50%;
     }
@@ -1983,6 +1983,7 @@ ul li img {
     }
     .metabolism h2 {
         font-size: 1rem;
+        text-align: center;
     }
     .centered-section {
         background-color: rgba(182, 32, 23, 0.1);
@@ -1994,8 +1995,17 @@ ul li img {
         flex-wrap: wrap;
         padding-left: 10px;
     }
+    .image-text-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .metabolism {
+        max-width: 68%;
+        padding-top: 25px;
+    }
     .metabolism p {
-        font-size: 1vh;
+        font-size: 1.3vh;
+        
     }
     .chart-container {
         width: 80%;
