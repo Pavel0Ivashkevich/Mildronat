@@ -2141,6 +2141,9 @@ ul li img {
     text-align: center;
 
 }
+.image1 {
+    height: 144px;
+}
 .image {
     max-width: 90%;
 }
