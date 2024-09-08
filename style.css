@@ -1929,8 +1929,7 @@ ul li img {
 }
 @media (max-width: 500px) {
     .backgroung_section1 {
-        right: -60%;
-        bottom: -39%;
+        width: 100%;
 
     }
     .intro-box {
@@ -2214,7 +2213,7 @@ ul li img {
 .pazzle {
     height: auto;
     top: 47%;
-    width: 390.59px;
+    width: 100%;
     object-fit: cover;
 }
 .pazzle2 {
