@@ -34,7 +34,7 @@ header {
     align-items: flex-end;
     display: flex;
     right: 0; 
-    bottom: 0; 
+    
 }
 .backgroung_section2 {
     position: absolute;
@@ -900,7 +900,7 @@ ul li img {
     opacity: 1;
 }
 .p-value {
-    font-size: 15px;
+    font-size: 14px;
     padding-right: 34px;
     font-family: MyriadProRegular;
     color: rgba(51, 51, 51, 1);
@@ -985,6 +985,7 @@ ul li img {
     gap: 10px;
     width: 550px;
     opacity: 0;
+    z-index: 1;
     transition: opacity 2s ease-out;
     animation-delay: 3.5s;
 }
@@ -1516,7 +1517,7 @@ overflow: hidden;
 }
 
 .improvement2 h2 {
-    font-size: 2.4rem;
+    font-size: 2rem;
     color: rgba(182, 32, 23, 1);
     margin-bottom: 20px;
     font-family: MyriadProBold;
@@ -1598,6 +1599,23 @@ overflow: hidden;
     .intro p {
         font-size: 1.725rem;
     }
+    .tbl_prg {
+        position: relative;
+        top: 20px;
+        left: -62px;
+
+    }
+    .after-table {
+        left: -33%;
+    }
+    .pazzle2 {
+        top: -258px;
+        position: relative;
+    }
+    .consequences2 {
+        
+        height: 600px;
+    }
 }
 @media (max-width: 1920px) {
     sup { 
@@ -1626,6 +1644,9 @@ overflow: hidden;
 @media (max-width: 1600px) {
     .info-box {
         margin-right: 0%;
+    }
+    .pazzle2 {
+        top: -165px;
     }
     .intro p {
         font-size: 1.125rem;
@@ -1752,7 +1773,11 @@ overflow: hidden;
         padding-top: 200px;
         text-align: center;
     }
-    
+    .tbl_prg {
+        position: relative;
+        top: -86px;
+        left: 159px;
+    }
     .chart-section h2 {
         font-size: 2rem; 
         font-family: MyriadProBold;
@@ -1929,8 +1954,8 @@ ul li img {
 }
 @media (max-width: 500px) {
     .backgroung_section1 {
-        width: 115%;
-
+        width: 157%;
+top: 0;
     }
     .intro-box {
         padding: 0;
@@ -2083,7 +2108,8 @@ ul li img {
     }
     .tbl_prg{
         position: relative;
-        top:54px;
+        top: 68px;
+        left: 97px;
     }
     .chart-section {
         padding-top: 30px;
@@ -2202,6 +2228,9 @@ ul li img {
     padding-bottom: 50px;
     padding-left: 10px;
 }
+.backgroung_section4 {
+    padding-top: 300px;
+}
 .image-item1 {
     
     padding-top: 5px;
@@ -2220,7 +2249,12 @@ ul li img {
     object-fit: cover;
 }
 .pazzle2 {
-top: 50%;
+    top: -8%;
+    right: -11%;
+    width: 100%;
+}
+.consequences2 {
+    height: 361px;
 }
 .under_table {
     font-size: 3vh;
@@ -2234,7 +2268,7 @@ top: 50%;
     height: auto;
 }
 .after-table {
-    left: -38%;
+    left: -56%;
 }
 }
 
