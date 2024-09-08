@@ -1928,34 +1928,36 @@ ul li img {
 }
 }
 @media (max-width: 500px) {
+    .intro-box {
+        padding: 0;
+        justify-content: flex-start;
+        gap: 7%;
+    }
     .info-box {
         
         width: 30%;
         height: 37.41px;
         line-height: 12.41px;
-        margin-top: 20px;
+        font-family: MyriadProBold;
         font-size: 0.6rem;
         
     }
 
-.intro-box {
- 
-    justify-content: space-around;
-}
+
 .info-box2{
     width: 75%;
 }
     
     .intro h1 {
         font-size: 1.1rem;
-        width: 50%;
+        width: 60%;
         
     }
     .intro p {
         font-size: 1rem;
         max-width: 50%;
         
-        margin: 0 auto;
+        
        
         max-width: 80%;
     }
@@ -1980,10 +1982,15 @@ ul li img {
     }
     .section-with-media img{
     width: 60%;
+    right: 20%;
+    position: relative;
     }
     .metabolism h2 {
         font-size: 1rem;
         text-align: center;
+    }
+    .image-text-section img {
+        height: auto;
     }
     .centered-section {
         background-color: rgba(182, 32, 23, 0.1);
@@ -2008,7 +2015,7 @@ ul li img {
         
     }
     .chart-container {
-        width: 80%;
+        width: 60%;
         margin-bottom: 0;
         margin-top: 0;
     }
@@ -2096,17 +2103,18 @@ ul li img {
     .text {
         font-size: 1vh;
     }
+    .consequences {
+        padding-left: 0%;
+    }
     .consequences h1 {
         font-size: 1.5rem;
-        right: 20px;
-        position: relative;
+       
         
     }
     .consequences p {
        max-width: 100%;
        font-size: 1rem;
-       right: 20px;
-       position: relative;
+       
 
     }
     .section-with-media .video-gif {
@@ -2200,8 +2208,8 @@ ul li img {
 }
 .pazzle {
     height: auto;
-    top: 40%;
-    left: 20px;
+    top: 47%;
+    
     object-fit: cover;
 }
 .pazzle2 {
