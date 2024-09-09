@@ -1,9 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Функция для переключения видимости списка источников
+    // Функция для переключения видимости списка источников и вращения иконки
     function toggleReferences() {
         const referencesList = document.getElementById('referencesList');
+        const referencesButton = document.querySelector('.references-button');
+        
         if (referencesList) {
-            referencesList.classList.toggle('visible');
+            referencesList.classList.toggle('visible'); // Показать/скрыть список
+            referencesButton.classList.toggle('active'); // Добавить/удалить класс active для кнопки
         }
     }
 
