@@ -236,4 +236,4 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(footer);
     }
 });
-document.body.style.overflow = 'hidden'; 
+document.body.style.overflowY = 'hidden'; 
