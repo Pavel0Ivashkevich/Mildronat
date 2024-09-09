@@ -4,6 +4,12 @@
     box-sizing: border-box;
     font-family: MyriadProLight, sans-serif;
 }
+html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    width: 100%;
+}
 
 sup {
     font-size: 10px;
@@ -17,12 +23,17 @@ strong {
 body {
     font-family: Arial, sans-serif;
     line-height: 1.2;
+    margin: 0;
+    padding: 0;
     width: 100%;
-    max-width: 1920px;
-    margin: 0 auto;
-    overflow-x: hidden; 
+    overflow-x: hidden;
+    object-fit: cover;
 }
-
+.container {
+    max-width: 1572px;
+    margin: 0 auto; /* Это центрирует контент */
+    padding: 0 20px; /* Небольшой внутренний отступ для мобильных устройств */
+}
 header {
  
     padding-left: 8%;
@@ -161,7 +172,7 @@ header {
 .section-with-media {
     display: flex;
     align-items: center;
-    
+    justify-content: center;
     
     opacity: 0; 
     transform: translateY(50px); 
@@ -1495,7 +1506,7 @@ overflow: hidden;
 .under_table {
     text-align: start;
     display: block;
-    padding-left: 10%;
+
     padding-bottom: 150px;
     padding-top: 300px;
     color: rgba(182, 32, 23, 1);
@@ -1576,11 +1587,11 @@ overflow: hidden;
     }
     .section-with-media {
         gap: 14%;
-        padding: 41px 243px 44px 10%;
+        padding: 41px 0px 44px 10%;
         
     }
     .centered-section {
-        gap: 9%;
+        gap: 4%;
     }
     .info-box {
         margin-right: 18%;
