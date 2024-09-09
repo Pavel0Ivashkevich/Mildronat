@@ -2,21 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Функция для переключения видимости списка источников и вращения иконки
     function toggleReferences() {
         const referencesList = document.getElementById('referencesList');
+        const referencesButton = document.querySelector('.references-button');
         
         if (referencesList) {
-            referencesList.classList.toggle('visible');
-            
-            if (referencesList.classList.contains('visible')) {
-                // Присваиваем высоту в зависимости от содержимого
-                referencesList.style.maxHeight = referencesList.scrollHeight + "px";
-            } else {
-                // Сворачиваем контент
-                referencesList.style.maxHeight = "0px";
-            }
+            referencesList.classList.toggle('visible'); // Показать/скрыть список
+            referencesButton.classList.toggle('active'); // Добавить/удалить класс active для кнопки
         }
     }
-    
-    
+
     // Видео
     const video = document.getElementById('myVideo');
     if (video) {
@@ -243,4 +236,3 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(footer);
     }
 });
-document.body.style.overflow = 'hidden'
