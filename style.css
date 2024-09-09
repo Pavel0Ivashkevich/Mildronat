@@ -1400,7 +1400,7 @@ ul li img {
 
 .references-list li {
     font-family: MyriadProLight;
-    font-size: 13px;
+    font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
     margin-bottom: 10px;
@@ -2325,7 +2325,9 @@ top: 0;
 .references-list {
     display: none;
 }
-
+.references-list li {
+    font-size: 13px;
+}
 
 }
 
