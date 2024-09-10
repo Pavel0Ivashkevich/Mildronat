@@ -2017,7 +2017,7 @@ ul li img {
 top: 0;
     }
     .intro-box {
-        padding: 0;
+        padding-top:20px;
         justify-content: flex-start;
         gap: 7%;
     }
@@ -2070,7 +2070,7 @@ top: 0;
     }
     .section-with-media img{
     width: 60%;
-    right: 20%;
+    right: 0%;
     position: relative;
     }
     .metabolism h2 {
@@ -2095,7 +2095,7 @@ top: 0;
         align-items: center;
     }
     .metabolism {
-        max-width: 68%;
+        max-width: 100%;
         padding-top: 25px;
     }
     .metabolism p {
@@ -2313,7 +2313,7 @@ top: 0;
     width: 100%;
 }
 .consequences2 {
-    height: 361px;
+    height: 400px;
 }
 .under_table {
     font-size: 3vh;
