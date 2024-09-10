@@ -1342,6 +1342,13 @@ ul li img {
     transform: rotateY(-54deg);
     height: 58%;
 }
+.anniversary-extended2{
+    position: absolute;
+    top: 245px;
+    left: -500.1px;
+    transform: rotateY(-55deg);
+    height: 54%;
+}
 .references-section {
     margin-top: 40px;
     text-align: left;
