@@ -2237,7 +2237,7 @@ top: 0;
 }
 .treatment-scheme .description {
     font-family: MyriadProBold;
-    font-size: 1rem;
+    font-size: 0.9rem;
     padding-left: 10px;
 }
 .arrow-container img {
@@ -2303,10 +2303,10 @@ top: 0;
 }
 .pazzle {
     height: auto;
-    top: 40%;
-    right: 4%;
+    top: 48%;
+    right: 6%;
     width: 83%;
-    object-fit: cover;
+   
 }
 .pazzle2 {
     top: -8%;
@@ -2338,6 +2338,9 @@ top: 0;
 }
 .footer-center, .footer-right {
     font-size: 1.2vh;
+}
+.improvement2 h2 {
+    padding-top: 0;
 }
 }
 
