@@ -1157,7 +1157,8 @@ ul li img {
 
 .images-container {
     display: flex;
-    justify-content: space-between;
+    align-items: flex-start;
+    gap: 10%;
     padding-top: 100px;
 }
 
@@ -1336,11 +1337,10 @@ ul li img {
 
 .anniversary-extended {
     position: absolute;
-   
     top: 243px;
-    left: -545px;
-    width: 549px;
-    height: 301px;
+    left: -543.1px;
+    transform: rotateY(-54deg);
+    height: 58%;
 }
 .references-section {
     margin-top: 40px;
