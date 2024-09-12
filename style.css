@@ -1338,7 +1338,7 @@ ul li img {
 .anniversary-extended {
     position: absolute;
     top: 243px;
-    left: -543.1px;
+    left: -541.1px;
     transform: rotateY(-54deg);
     height: 58%;
 }
@@ -1676,7 +1676,7 @@ overflow: hidden;
 }
 @media (max-width: 1920px) {
     sup { 
-        font-size: 15px;
+        font-size: 10px;
     }
    
     
