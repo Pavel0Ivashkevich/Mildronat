@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return (visibleHeight / totalHeight) * 100 >= percentVisible;
     }
 
-    // Оптимизированная функция для анимации баров и значений
+    // Функция для анимации баров и значений одновременно с синхронизацией
     function animateBars(section) {
         const bars = section.querySelectorAll('.bar');
         bars.forEach((bar) => {
@@ -55,26 +55,27 @@ document.addEventListener('DOMContentLoaded', () => {
                 targetValue = 0;
             }
 
+            const duration = 2000; // Длительность анимации в миллисекундах
+            const stepHeight = targetHeight / (duration / 16); // Шаг изменения высоты
+            const stepValue = targetValue / (duration / 16); // Шаг изменения значения
+
             // Анимация столбца и значения параллельно
             function updateBar() {
-                const heightStep = Math.min(5, targetHeight - currentHeight);
-                const valueStep = Math.min(0.1, targetValue - currentValue);
-
                 if (currentHeight < targetHeight || currentValue < targetValue) {
-                    currentHeight += heightStep;
-                    bar.style.height = `${currentHeight}px`;
+                    currentHeight = Math.min(currentHeight + stepHeight, targetHeight);
+                    currentValue = Math.min(currentValue + stepValue, targetValue);
 
-                    currentValue += valueStep;
-                    valueElement.textContent = currentValue.toFixed(1).replace('.', ',');
+                    bar.style.height = `${currentHeight}px`;
+                    valueElement.textContent = currentValue.toFixed(2).replace('.', ',');
 
                     // Одновременное появление значения
                     valueElement.classList.add('visible');
-                    
+
                     requestAnimationFrame(updateBar);
                 } else {
-                    // Окончательная установка высоты и значения
+                    // Устанавливаем финальные значения
                     bar.style.height = `${targetHeight}px`;
-                    valueElement.textContent = targetValue.toFixed(1).replace('.', ',');
+                    valueElement.textContent = targetValue.toFixed(2).replace('.', ',');
                     valueElement.classList.add('visible');
                 }
             }
