@@ -59,6 +59,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const stepHeight = targetHeight / (duration / 16); // Шаг изменения высоты
             const stepValue = targetValue / (duration / 16); // Шаг изменения значения
 
+            // Функция для форматирования числа с одной цифрой после запятой
+            function formatNumber(value) {
+                return value.toFixed(1).replace('.', ',');
+            }
+
             // Анимация столбца и значения параллельно
             function updateBar() {
                 if (currentHeight < targetHeight || currentValue < targetValue) {
@@ -66,7 +71,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     currentValue = Math.min(currentValue + stepValue, targetValue);
 
                     bar.style.height = `${currentHeight}px`;
-                    valueElement.textContent = currentValue.toFixed(2).replace('.', ',');
+
+                    // Форматирование значения с одной цифрой после запятой
+                    valueElement.textContent = formatNumber(currentValue);
 
                     // Одновременное появление значения
                     valueElement.classList.add('visible');
@@ -75,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 } else {
                     // Устанавливаем финальные значения
                     bar.style.height = `${targetHeight}px`;
-                    valueElement.textContent = targetValue.toFixed(2).replace('.', ',');
+                    valueElement.textContent = formatNumber(targetValue); // Форматирование финального значения
                     valueElement.classList.add('visible');
                 }
             }
@@ -237,4 +244,5 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(footer);
     }
 });
+
 document.body.style.overflowY = 'hidden'; 
