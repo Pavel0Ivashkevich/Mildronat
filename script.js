@@ -246,3 +246,13 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.body.style.overflowY = 'hidden'; 
+
+document.querySelectorAll('.js-ga4-link').forEach(function(element) {
+    element.addEventListener('click', function() {
+        // Получаем значение атрибута data-gatitle для передачи в событие
+        var eventText = element.getAttribute('data-gatitle');
+        
+        // Триггерим событие с именем "interactive-event" и передаем eventText
+        document.body.dispatchEvent(new CustomEvent('interactive-event', { detail: eventText }));
+    });
+});
