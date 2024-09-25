@@ -1804,8 +1804,10 @@ overflow: hidden;
         height: 250px;
     }
     .pazzle {
-        width: 90%;
-        height: 60%;
+        width: 88%;
+        height: 33%;
+        top: 36%;
+    
     }
     .footer-top {
         font-size: 3.7vh;
@@ -1960,7 +1962,7 @@ overflow: hidden;
 }
 @media (max-width: 700px) {
     .pazzle {
-        top: 16%;
+        top: 40%;
     }
     
     .grid-container {
@@ -2314,7 +2316,7 @@ top: 0;
 }
 .pazzle {
     height: auto;
-    top: 48%;
+    top: 44%;
     right: 6%;
     width: 83%;
    
@@ -2357,7 +2359,14 @@ top: 0;
     font-size: 1.5rem;
 }
 }
-
+@media (max-width: 350px) {
+.center-section img {
+    
+        max-width: 64%;
+        height: auto;
+        margin-left: 35px;
+}
+}
 /* Подключение шрифтов */
 @font-face {
     font-family: 'MyriadProBold';
