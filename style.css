@@ -1907,7 +1907,9 @@ overflow: hidden;
         top: 45%; 
         transform: translateX(-50%);
     }
-    
+    .footer-note p {
+        margin-top: 80px;
+    }
     .p-value {
         font-size: 0.4rem; 
         font-family: MyriadProRegular;
@@ -2180,6 +2182,7 @@ top: 0;
     }
     .footer-note p {
         font-size: 1vh;
+        margin-top: 0;
     }
     .improvement h2 {
         font-size: 1.4rem;
