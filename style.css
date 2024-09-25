@@ -1782,13 +1782,15 @@ overflow: hidden;
     }
 
     .info-box {
-  
-        left: 50%; 
-       
-        
+        height: 51.41px;
+        font-size: 0.8rem;
+        width: 182px;
     }
     .section-with-media {
-        padding: 44px 10%;
+        gap: 40px;
+        flex-direction: column-reverse;
+        padding-top: 139px;
+    
     }
     .section-with-media img {
         width: 60%; 
