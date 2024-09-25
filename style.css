@@ -2202,7 +2202,8 @@ top: 0;
     }
     .footer-note p {
         font-size: 1vh;
-        margin-top: 0;
+        margin-top: 10px;
+        padding-bottom: 30px;
     }
     .improvement h2 {
         font-size: 1.4rem;
@@ -2331,7 +2332,7 @@ top: 0;
     flex-direction: column;
     padding-top: 10px;
     gap: 30px;
-    padding-bottom: 50px;
+    padding-bottom: 15px;
     padding-left: 10px;
 }
 .backgroung_section4 {
@@ -2400,6 +2401,12 @@ top: 0;
 }
 .after-table {
     left: -65%;
+}
+.improvement2 p {
+    font-size: 0.9rem;
+}
+.treatment-scheme h2 {
+    font-size: 1.3rem;
 }
 }
 @media (max-width: 350px) {
