@@ -2023,6 +2023,13 @@ ul li img {
     width: 200px;
     height: 200px;
 }
+.pazzle2 {
+    top: 0px;
+    width: 157%;
+}
+.consequences p {
+    max-width: 60%;
+}
 }
 @media (max-width: 500px) {
     .backgroung_section1 {
@@ -2066,7 +2073,7 @@ top: 0;
         color: rgba(51, 51, 51, 1);
         font-family: MyriadProBold;
         font-size: 1rem;
-        padding-top: 148px;
+        padding-top: 200px;
     }
     .section-with-media {
         padding: 1%;
