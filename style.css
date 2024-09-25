@@ -648,7 +648,8 @@ header {
 }
 
 .left-section, .right-section {
-    width: 30%;
+    width: 40%;
+    height: 414px;
 }
 
 .category-button {
@@ -1858,7 +1859,7 @@ overflow: hidden;
     
     .chart-container {
         width: 70%; 
-        height: 400px;
+        height: 330px;
         margin: 50px auto;
         position: relative;
         display: flex;
@@ -1911,6 +1912,8 @@ overflow: hidden;
         font-size: 0.4rem; 
         font-family: MyriadProRegular;
         color: rgba(51, 51, 51, 1);
+        padding-right: 0px;
+
     }
     
     .to {
@@ -2053,7 +2056,7 @@ top: 0;
 
 
 .info-box2{
-    width: 75%;
+    width: 93%;
 }
     
     .intro h1 {
