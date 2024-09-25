@@ -805,7 +805,7 @@ ul li img {
 
 .chart-container {
     width: 451px; 
-    height: 400px;
+    height: 300px;
     margin: 50px auto;
     position: relative;
     display: flex;
@@ -1747,8 +1747,8 @@ overflow: hidden;
         gap: 27px;
     }
     .image-text-section img {
-        max-width: 50%;
-        height: 50%;
+        max-width: 40%;
+       height: 40%;
     }
     .category-button {
         gap: 0;
@@ -1776,7 +1776,7 @@ overflow: hidden;
     }
    
 }
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
     .image-text-section {
         flex-direction: column;
         align-items: center; 
@@ -1801,12 +1801,12 @@ overflow: hidden;
         width: 60%; 
     }
     .section-with-media .video-gif {
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
     }
     .pazzle {
         width: 88%;
-        height: 33%;
+        height: 41%;
         top: 36%;
     
     }
@@ -1859,8 +1859,8 @@ overflow: hidden;
     
     .chart-container {
         width: 70%; 
-        height: 330px;
-        margin: 50px auto;
+        height: 300px;
+        margin: 18px auto;
         position: relative;
         display: flex;
         align-items: flex-end;
