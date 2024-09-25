@@ -2041,6 +2041,12 @@ ul li img {
 .consequences p {
     max-width: 60%;
 }
+.category-button {
+    font-size: 12px;
+}
+.center-section img {
+    height: 200px;
+}
 }
 @media (max-width: 500px) {
     .backgroung_section1 {
