@@ -1840,6 +1840,11 @@ overflow: hidden;
     .metabolism{
     max-width: 100%;
     }
+    
+        .pazzle2 {
+            top: 0px;
+            width: 100%;
+        }
 }
 @media (max-width: 850px) {
     .chart-section {
@@ -2152,14 +2157,22 @@ top: 0;
         padding: 30px;
         width: 80%;
     }
+    .ul-p2{
+        width: 121px;
+        padding-left: 3px;
+    }
     ul li {
     
         padding-left: 5px;
         font-size: 1.2vh;
-        width: 120px;
+        width: 98px;
 
      
        
+    }
+    ul {
+        list-style: none;
+        padding-left: 13px;
     }
     .section-with-media {
         flex-direction: column-reverse; 
