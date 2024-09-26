@@ -2053,7 +2053,7 @@ ul li img {
     font-size: 12px;
 }
 .center-section img {
-    height: 200px;
+    height: 149px;
 }
 }
 @media (max-width: 550px) {
@@ -2072,6 +2072,9 @@ ul li img {
     .backgroung_section1 {
         width: 157%;
 top: 0;
+    }
+    .ul-p2-r {
+        margin-bottom: 6px;
     }
     .intro-box {
         padding-top:20px;
@@ -2416,7 +2419,7 @@ top: 0;
 @media (max-width: 400px) {
 
 .p-value {
-    font-size: 0.3rem;
+    font-size: 0.2rem;
 }
 .after-table {
     left: -65%;
