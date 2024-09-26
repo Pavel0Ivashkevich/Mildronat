@@ -1846,8 +1846,12 @@ overflow: hidden;
             top: 0px;
             width: 100%;
         }
+        .center-section img {
+            height: 149px;
+        }
 }
 @media (max-width: 850px) {
+    
     .chart-section {
         padding-top: 200px;
         text-align: center;
