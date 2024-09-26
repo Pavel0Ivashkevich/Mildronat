@@ -310,7 +310,7 @@ header {
 
 .consequences p {
     font-size: 1.125rem; 
-    max-width: 40%;
+    max-width: 41%;
     color: rgba(22, 48, 72, 1); 
     font-family: MyriadProRegular;
     opacity: 0;
@@ -648,7 +648,8 @@ header {
 }
 
 .left-section, .right-section {
-    width: 30%;
+    width: 40%;
+    height: 414px;
 }
 
 .category-button {
@@ -804,7 +805,7 @@ ul li img {
 
 .chart-container {
     width: 451px; 
-    height: 400px;
+    height: 300px;
     margin: 50px auto;
     position: relative;
     display: flex;
@@ -1154,6 +1155,7 @@ ul li img {
     margin-bottom: 30px;
     color: rgba(51, 51, 51, 1);
     padding-top: 40px;
+    max-width: 900px;
 }
 
 .images-container {
@@ -1554,8 +1556,8 @@ overflow: hidden;
     text-align: start;
     display: block;
     padding-left: 10%;
-    padding-bottom: 150px;
-    padding-top: 300px;
+    padding-bottom: 55px;
+    padding-top: 29px;
     color: rgba(182, 32, 23, 1);
     font-family: MyriadProBold;
     font-size: 3vh;
@@ -1746,8 +1748,8 @@ overflow: hidden;
         gap: 27px;
     }
     .image-text-section img {
-        max-width: 50%;
-        height: 50%;
+        max-width: 40%;
+       height: 40%;
     }
     .category-button {
         gap: 0;
@@ -1775,31 +1777,39 @@ overflow: hidden;
     }
    
 }
-@media (max-width: 1000px) {
+@media (max-width: 1024px) {
+    .image-text-section {
+        flex-direction: column;
+        align-items: center; 
+    }
     .intro h1 {
         font-size: 1.8rem;
         padding-right: 0; 
     }
 
     .info-box {
-  
-        left: 50%; 
-       
-        
+        height: 51.41px;
+        font-size: 0.8rem;
+        width: 182px;
     }
     .section-with-media {
-        padding: 44px 10%;
+        gap: 40px;
+        flex-direction: column-reverse;
+        padding-top: 139px;
+    
     }
     .section-with-media img {
         width: 60%; 
     }
     .section-with-media .video-gif {
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
     }
     .pazzle {
-        width: 90%;
-        height: 60%;
+        width: 88%;
+        height: 41%;
+        top: 36%;
+    
     }
     .footer-top {
         font-size: 3.7vh;
@@ -1823,10 +1833,19 @@ overflow: hidden;
     }
     .metabolism h2 {
         font-size: 2rem;
+        text-align: center;
     }
     .metabolism p {
         font-size: 0.925rem;
     }
+    .metabolism{
+    max-width: 100%;
+    }
+    
+        .pazzle2 {
+            top: 0px;
+            width: 100%;
+        }
 }
 @media (max-width: 850px) {
     .chart-section {
@@ -1846,8 +1865,8 @@ overflow: hidden;
     
     .chart-container {
         width: 70%; 
-        height: 400px;
-        margin: 50px auto;
+        height: 300px;
+        margin: 18px auto;
         position: relative;
         display: flex;
         align-items: flex-end;
@@ -1894,11 +1913,15 @@ overflow: hidden;
         top: 45%; 
         transform: translateX(-50%);
     }
-    
+    .footer-note p {
+        margin-top: 80px;
+    }
     .p-value {
         font-size: 0.4rem; 
         font-family: MyriadProRegular;
         color: rgba(51, 51, 51, 1);
+        padding-right: 0px;
+
     }
     
     .to {
@@ -1950,7 +1973,7 @@ overflow: hidden;
 }
 @media (max-width: 700px) {
     .pazzle {
-        top: 16%;
+        top: 40%;
     }
     
     .grid-container {
@@ -1989,6 +2012,7 @@ header {
 }
 .table-button {
     width: 100%;
+    margin: 8px auto 20px;
 }
 ul li {
     background-color: #f2f2f2;
@@ -2009,6 +2033,19 @@ ul li img {
 }
 .section-with-media .video-gif {
     width: 200px;
+    height: 200px;
+}
+.pazzle2 {
+    top: 0px;
+    width: 157%;
+}
+.consequences p {
+    max-width: 60%;
+}
+.category-button {
+    font-size: 12px;
+}
+.center-section img {
     height: 200px;
 }
 }
@@ -2034,7 +2071,7 @@ top: 0;
 
 
 .info-box2{
-    width: 75%;
+    width: 93%;
 }
     
     .intro h1 {
@@ -2054,7 +2091,7 @@ top: 0;
         color: rgba(51, 51, 51, 1);
         font-family: MyriadProBold;
         font-size: 1rem;
-        padding-top: 148px;
+        padding-top: 200px;
     }
     .section-with-media {
         padding: 1%;
@@ -2124,17 +2161,25 @@ top: 0;
     .table-button {
         font-size: 2vh;
         height: 10px;
-        padding: 20px;
+        padding: 30px;
         width: 80%;
+    }
+    .ul-p2{
+        width: 121px;
+        padding-left: 3px;
     }
     ul li {
     
         padding-left: 5px;
         font-size: 1.2vh;
-        width: 120px;
+        width: 98px;
 
      
        
+    }
+    ul {
+        list-style: none;
+        padding-left: 13px;
     }
     .section-with-media {
         flex-direction: column-reverse; 
@@ -2157,6 +2202,8 @@ top: 0;
     }
     .footer-note p {
         font-size: 1vh;
+        margin-top: 10px;
+        padding-bottom: 30px;
     }
     .improvement h2 {
         font-size: 1.4rem;
@@ -2265,7 +2312,7 @@ top: 0;
     width: 10%;
 }
 .category-button {
-    width: 100px;
+    width: 120px;
     font-size: 1vh;
 }
 .influence-header h2 {
@@ -2285,7 +2332,7 @@ top: 0;
     flex-direction: column;
     padding-top: 10px;
     gap: 30px;
-    padding-bottom: 50px;
+    padding-bottom: 15px;
     padding-left: 10px;
 }
 .backgroung_section4 {
@@ -2304,7 +2351,7 @@ top: 0;
 }
 .pazzle {
     height: auto;
-    top: 48%;
+    top: 44%;
     right: 6%;
     width: 83%;
    
@@ -2345,6 +2392,34 @@ top: 0;
 }
 .chart-section h2 {
     font-size: 1.5rem;
+}
+}    
+@media (max-width: 400px) {
+
+.p-value {
+    font-size: 0.3rem;
+}
+.after-table {
+    left: -65%;
+}
+.improvement2 p {
+    font-size: 0.9rem;
+}
+.treatment-scheme h2 {
+    font-size: 1.3rem;
+}
+}
+@media (max-width: 350px) {
+.center-section img {
+    
+        max-width: 64%;
+        height: auto;
+        margin-left: 14px;
+}
+.intro p {
+    font-size: 0.9rem;
+
+    max-width: 80%;
 }
 }
 
