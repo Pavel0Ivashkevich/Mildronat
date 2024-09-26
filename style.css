@@ -2052,6 +2052,18 @@ ul li img {
     height: 200px;
 }
 }
+@media (max-width: 550px) {
+.category-button {
+    font-size: 9px;
+}
+.category-button img {
+    width: 20%;
+}
+    .ul-p2-r {
+        margin-bottom: 20px;
+    }
+}
+
 @media (max-width: 500px) {
     .backgroung_section1 {
         width: 157%;
