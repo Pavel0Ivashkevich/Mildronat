@@ -310,7 +310,7 @@ header {
 
 .consequences p {
     font-size: 1.125rem; 
-    max-width: 40%;
+    max-width: 41%;
     color: rgba(22, 48, 72, 1); 
     font-family: MyriadProRegular;
     opacity: 0;
@@ -2416,7 +2416,13 @@ top: 0;
         height: auto;
         margin-left: 14px;
 }
+.intro p {
+    font-size: 0.9rem;
+
+    max-width: 80%;
 }
+}
+
 /* Подключение шрифтов */
 @font-face {
     font-family: 'MyriadProBold';
